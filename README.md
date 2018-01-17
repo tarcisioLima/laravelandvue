@@ -13,3 +13,5 @@ Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function
 #Vue
 Usa-se props array, para definir os atributos passados na tag do component.
 computed pra encapsular logicas de negocio que são necessarios logo na inicialização da página.
+
+Aprender issso aqui  { https://www.youtube.com/watch?v=k32voqQhODc }

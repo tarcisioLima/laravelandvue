@@ -1,15 +1,27 @@
 <template>
     <ol class="breadcrumb">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Library</a></li>
-      <li class="active">Data</li>
+      <li v-for="item in lista">
+          <a v-if="item.url" v-bind:href="item.url" v-bind:class="defineClass">{{item.title}}</a>
+          <span v-if="!item.url">{{item.title}}</span>
+      </li>
     </ol>
 </template>
 <script>
     export default {
         props: ['list'],
-        mounted: function() {
-            console.log(JSON.parse(this.list));
+        data: function () {
+            return {
+                lista: this.list
+            }
+        },
+        computed: {
+           defineClass: function(){
+               if(this.url) {
+                   return 'active';
+               }else {
+                   return '';
+               }
+           }
         }
     }
 </script>
