@@ -4,38 +4,26 @@
 <pagina tamanho="12">
     <painel titulo="Lista de artigos" cor="laranja">
        <breadcrumb v-bind:list="{{$breadcrumbList}}"></breadcrumb>
-        <!-- Large modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#meuModalTest">Large modal</button>
-
        <tabela-lista v-bind:titulos="['#','Título', 'Descrição']"
                      v-bind:itens="[[1, 'PHP OO', 'Curso de PHP OO'], [2, 'Ruby', 'Ruby nos trilhos'], [3, 'Haskell', 'Curso de Haskell YESOD']]"
                      criar="#criar" detalhe="#detalhe" editar="#editar" deletar="#deletar" token="34264343"
                      ordem="asc" ordemcol="0"></tabela-lista>
     </painel>
+    <modal-link type="button" name="meuModalTest" title="clique aqui para abrir o modal"></modal-link>
 </pagina>
 <modal name="meuModalTest">
     <painel titulo="Formulario">
-        <form>
+       <formulario css="" action="" method="put" enctype="multipart/form-data" token="">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="descricao">Título</label>
+              <input type="text" name="titulo" id="titulo" class="form-control" placeholder="título">
           </div>
           <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" id="exampleInputFile">
-            <p class="help-block">Example block-level help text here.</p>
+            <label for="descricao">Descrição</label>
+            <input type="text" name="descricao" id="descricao" class="form-control" placeholder="descrição">
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+          <button class="btn btn-info">Adicionar</button>
+       </formulario>
     </painel>
 </modal>
 @endsection
